@@ -24,7 +24,7 @@ Route::get('/weather', function() {
     $lat = request('lat');
     $lon = request('lon');
 
-    $response = Zttp::get("https://api.openweathermap.org/data/2.5/weather?q=jakarta&units=imperial&appid=$apiKey");
+    $response = Zttp::get("https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&exclude=alerts&units=metric&appid=$apiKey");
 
     return $response->json();
 });
